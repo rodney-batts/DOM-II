@@ -56,10 +56,21 @@ Note: Drag and drop is a bit more advanced than the others: it's not actually a 
 
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
 
-const navContainer = document.querySelector(".nav container");
+const navContainer = document.querySelector(".nav-container");
+navContainer.addEventListener("mouseover", (event) =>{
+  navContainer.style.backgroundColor = "pink";
+});
+
+const nav = document.querySelector(".nav");
+nav.addEventListener("mouseup", (event) =>{
+  nav.style.backgroundColor = "yellow";
+});
+
 const navLink = document.querySelector(".nav-link");
 navLink.addEventListener("click", (event) => {
-  navContainer.style.backgroundColor = "blue";
+  navLink.style.Color = "blue";
+  event.stopPropogation();
+  event.preventDefault();
 });
 
 const textContent = document.querySelector(".text-content");
@@ -97,3 +108,5 @@ const destination = document.querySelector(".destination");
 destination.addEventListener("click", (event) =>{
 destination.style.color = "blue";
 });
+
+
